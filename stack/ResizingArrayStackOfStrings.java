@@ -1,7 +1,6 @@
 
 public class ResizingArrayStackOfStrings
 {
-
 	private String[] s;
 	private int N;
 
@@ -9,7 +8,7 @@ public class ResizingArrayStackOfStrings
 		s = new String[1];
 	}
 
-	public void push(String item){
+	public void push(String item) {
 		if (N == s.length) resize(2 * s.length);
 		s[N++] = item;
 	}
@@ -26,5 +25,12 @@ public class ResizingArrayStackOfStrings
 		s[N] = null;
 		if (N > 0 && N == s.length/4) resize(s.length/2);
 		return item;
+	}
+
+	// unit testing (optional)
+	public static void main(String[] args) {
+		ResizingArrayStackOfStrings stack = new ResizingArrayStackOfStrings();
+
+		stack.push("hi")
 	}
 }
